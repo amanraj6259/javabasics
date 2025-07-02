@@ -11,11 +11,15 @@ public class Person {
     {
         this.age = age;
     }
+    //If we doesnt override equals and hashcode , o/p will be 2 as it will cosider 2 different objects
+    //Hashset internally checks equals and hashcode
+    //if we just implement any one of hashcode or equals still output will be 2
+    //if both hashCode() and equals() to check for uniqueness o/p will be 1.
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hashCode(age);
-//    }
+   @Override
+   public int hashCode() {
+       return Objects.hashCode(age);
+   }
     @Override
     public boolean equals(Object obj)
     {
